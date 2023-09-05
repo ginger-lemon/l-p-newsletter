@@ -1,0 +1,11 @@
+.button {
+    background-color: hsl(234, 29%, 20%);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    display: block;
+    padding: 20px 40px;
+    width: 400px;
+    height: 60px;
+    font-size: var(--font-size);
+}
