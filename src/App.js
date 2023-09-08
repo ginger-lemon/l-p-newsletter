@@ -35,6 +35,7 @@ function App() {
       // 送出訊息、打開 success message
       SetIsSubmit(true);
       setIsError(false);
+      return (<SuccessMessage />);
     }
   }
 
@@ -49,16 +50,15 @@ function App() {
   return (
     <div className={AppStyles.container}>
         { isSubmit ? 
-          (<SuccessMessage/>) : 
-          null
+          (<SuccessMessage/>) :
+          <SignupForm 
+            onSubmit={handleSubmit}
+            value={emailValue}
+            onChange={handleGetEmailValue}
+            errorMessageClass={errorMessageClass}
+            emailInputClass={emailInputClass}
+          />
         }
-        <SignupForm 
-          onSubmit={handleSubmit}
-          value={emailValue}
-          onChange={handleGetEmailValue}
-          errorMessageClass={errorMessageClass}
-          emailInputClass={emailInputClass}
-        />
     </div>
   );
 }

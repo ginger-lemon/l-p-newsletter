@@ -1,13 +1,14 @@
 import React from "react";
 import iconList from "../../assets/images/icon-list.svg";
 import imgSignupDesktop from "../../assets/images/illustration-sign-up-desktop.svg";
+import imgSignupMobile from "../../assets/images/illustration-sign-up-mobile.svg"
 import Button from "../Button/Button";
 import SignupFormStyles from "./signupform.module.css";
 
 function SignupForm({ onSubmit, value, onChange, emailInputClass, errorMessageClass  }) {
     return (
         <div className={ SignupFormStyles.container}>
-            <div className={SignupFormStyles.block}>
+            <div>
                 <h1 className={ SignupFormStyles.h1}>Stay updated!</h1>
                 <p className={SignupFormStyles.text}>
                     Join 60,000+ product managers receiving monthly updates on:
@@ -58,9 +59,15 @@ function SignupForm({ onSubmit, value, onChange, emailInputClass, errorMessageCl
 
             </div>
             <div>
-                <img 
-                    src={imgSignupDesktop} 
-                    alt="" 
+                <img  
+                    src={imgSignupDesktop}
+                    className={SignupFormStyles.imgDesktop}
+                    alt=""
+                />
+                <img
+                    src={imgSignupMobile}
+                    alt=""
+                    className={SignupFormStyles.imgMobile}
                 />
             </div>
         </div>

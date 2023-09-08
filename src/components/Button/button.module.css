@@ -8,4 +8,8 @@
     width: 400px;
     height: 60px;
     font-size: var(--font-size);
+
+    @media (max-width: 400px) {
+        width: 100%;
+    }
 }
