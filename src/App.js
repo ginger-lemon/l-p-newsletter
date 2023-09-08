@@ -1,13 +1,24 @@
 import React, { useState } from "react";
-import SuccessMessage from "./components/SuccessMessage";
-import SignupForm from "./components/SignupForm";
-
-import AppStyles from './styles/app.module.css';
+import SuccessMessage from "./components/SuccessMessage/SuccessMessage";
+import SignupForm from "./components/SignupForm/SignupForm";
+import AppStyles from './app.module.css';
+import SignupFormStyles from "./components/SignupForm/signupform.module.css";
 
 function App() {
   const [isSubmit, SetIsSubmit] = useState(false);
   const [emailValue, setEmailValue] = useState(null);
   const [isError, setIsError] = useState(false);
+
+  let errorMessageClass = '';
+  let emailInputClass = '';
+
+  if (isError) {
+    errorMessageClass = `${SignupFormStyles.error}  ${SignupFormStyles.visible}`;
+    emailInputClass = SignupFormStyles.inputError;
+  } else {
+    errorMessageClass = SignupFormStyles.error;
+    emailInputClass = SignupFormStyles.input;
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,14 +34,17 @@ function App() {
     } else {
       // 送出訊息、打開 success message
       SetIsSubmit(true);
+      setIsError(false);
     }
   }
 
   function handleGetEmailValue(e) {
+    if (e.target.value === '') {
+      setIsError(false);
+    } 
     setEmailValue(e.target.value);
+    
   }
-
-
 
   return (
     <div className={AppStyles.container}>
@@ -42,7 +56,8 @@ function App() {
           onSubmit={handleSubmit}
           value={emailValue}
           onChange={handleGetEmailValue}
-          isError={isError}
+          errorMessageClass={errorMessageClass}
+          emailInputClass={emailInputClass}
         />
     </div>
   );

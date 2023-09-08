@@ -65,6 +65,16 @@
     display: inline;
 }
 
-.errorInput {
+.inputError {
     border: 1px solid tomato;
+    background-color: hsl(4, 100%, 67%);
+    opacity: 0.6;
+    border-radius: 10px;
+    display: block;
+    font-size: var(--font-size);
+    color: white;
+    margin: 10px 0 20px;
+    padding: 15px 30px;
+    width: 400px;
+    height: 60px;
 }

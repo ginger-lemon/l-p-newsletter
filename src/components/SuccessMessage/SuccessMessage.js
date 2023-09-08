@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from './Button';
-import iconSuccess from '../assets/images/icon-success.svg';
-import SuccessMessageStyles from '../styles/successmessage.module.css'
+import Button from '../Button/Button';
+import iconSuccess from '../../assets/images/favicon-32x32.png';
+import SuccessMessageStyles from './successmessage.module.css'
 
 function SuccessMessage() {
     return (

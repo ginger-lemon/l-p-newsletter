@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonStyles from "../styles/button.module.css";
+import ButtonStyles from "./button.module.css";
 
 function Button({ buttonTexts }) {
     return (

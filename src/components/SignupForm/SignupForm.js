@@ -1,10 +1,10 @@
 import React from "react";
-import iconList from "../assets/images/icon-list.svg";
-import imgSignupDesktop from "../assets/images/illustration-sign-up-desktop.svg";
-import Button from "./Button";
-import SignupFormStyles from "../styles/signupform.module.css";
+import iconList from "../../assets/images/icon-list.svg";
+import imgSignupDesktop from "../../assets/images/illustration-sign-up-desktop.svg";
+import Button from "../Button/Button";
+import SignupFormStyles from "./signupform.module.css";
 
-function SignupForm({ onSubmit, value, onChange, isError }) {
+function SignupForm({ onSubmit, value, onChange, emailInputClass, errorMessageClass  }) {
     return (
         <div className={ SignupFormStyles.container}>
             <div className={SignupFormStyles.block}>
@@ -33,19 +33,20 @@ function SignupForm({ onSubmit, value, onChange, isError }) {
                 <form 
                     className={SignupFormStyles.form}
                     onSubmit={onSubmit}
+                    
                 >
                     <label
                         className={SignupFormStyles.label}
                     >
                         Email address
                     </label>
-                    <span className={SignupFormStyles.error}>
+                    <span className={errorMessageClass}>
                         Vailed email required
                     </span>
                     <input 
                         type="email" 
                         placeholder="email@company.com"
-                        className={ SignupFormStyles.input}
+                        className={emailInputClass}
                         value={value}
                         onChange={onChange}
                     >
